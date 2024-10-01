@@ -63,14 +63,13 @@ client.on("message", async (message) => {
 
                         const uploaded = await uploader.uploadFile(details.filename, details.filename);
 
-                        await message.channel?.sendMessage({ attachments: [uploaded] });
+                        await message.reply({ attachments: [uploaded] });
                         fs.unlinkSync(details.filename);
                     }
                 }
 
                 if (details.status === "picker") {
                     let filesDownloaded: string[] = [];
-                    let filesToUpload: string[] = [];
 
                     for (let i of details.picker) {
                         console.log(`fetching ${i.filename}`);
@@ -88,19 +87,9 @@ client.on("message", async (message) => {
 
                             const uploaded = await uploader.uploadFile(i.filename, i.filename);
 
-                            await message.channel?.sendMessage({ attachments: [uploaded] });
+                            await message.reply({ attachments: [uploaded] });
                             fs.unlinkSync(i.filename);
                         }
-                    }
-
-                    for (let i of filesDownloaded) {
-                        if (fs.statSync(i).size > 0) {
-                            filesToUpload.push(i);
-                        }
-                    }
-
-                    for (let i of filesToUpload) {
-                        message.channel?.sendMessage({ attachments: [i] });
                     }
 
                     for (let i of filesDownloaded) {
