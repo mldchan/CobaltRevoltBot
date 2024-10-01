@@ -1,0 +1,20 @@
+{
+  "name": "cobalt_revolt_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "revolt-uploader": "^1.1.5",
+    "revolt.js": "6.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4"
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules/**/*"],
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "ESNext",
+        "strict": true,
+        "moduleResolution": "NodeNext",
+        "module": "NodeNext",
+        "skipLibCheck": true,
+        "outDir": "dist/"
+    }
+}
