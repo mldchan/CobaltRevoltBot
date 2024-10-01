@@ -1,0 +1,6 @@
+
+
+services:
+  cobalt_revolt_bot:
+    build: .
+    restart: unless-stopped
